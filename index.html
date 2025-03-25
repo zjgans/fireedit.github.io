@@ -184,7 +184,7 @@
         <!-- Your image here -->
         <img src="static\images\teaser.jpg" alt="Teaser Image" width="100%" height="auto">
         <h2 class="subtitle has-text-centered">
-           We propose FireEdit, an instruction-based image editing method guided by a visual language model (VLM). Our primary innovation is the introduction of region tokens,
+           Our framework leverages a vision language model (VLM) to guide instruction-based image editing. Our primary innovation is the introduction of region tokens,
   which enable the VLM to accurately identify edited objects or areas in complex scenarios while preserving high-frequency details in unintended regions during image decoding.
         </h2>
       </div>
@@ -200,8 +200,8 @@
         Your video here
         <source src="\static\PDF\teaser.pdf" type="application/pdf">
         <h2 class="subtitle has-text-centered">
-          We propose FireEdit, an instruction-based image editing method guided by a visual language model (VLM). Our primary innovation is the introduction of region tokens,
-  which enable the VLM to accurately identify edited objects or areas in complex scenarios while preserving high-frequency details in unintended regions during image decoding.
+         Our framework leverages a vision language model (VLM) to guide instruction-based image editing. Our primary innovation is the introduction of region tokens,
+  which enables the VLM to accurately identify edited objects or areas in complex scenarios while preserving high-frequency details in unintended regions during image decoding.
         </h2>
       </div>
     </div>
@@ -219,9 +219,7 @@
               Currently, instruction-based image editing methods have made significant progress by leveraging the powerful cross-modal understanding capabilities of visual language models (VLMs).
               However, they still face challenges in three key areas: 1) complex scenarios; 2) semantic consistency; and 3) fine-grained editing. 
               To address these issues, we propose FireEdit, an innovative Fine-grained Instruction-based image editing framework that exploits a REgion-aware VLM. 
-FireEdit is designed to accurately comprehend user instructions and ensure effective control over the editing process. We employ a VLM to precisely localize the desired editing regions within complex scenes. 
-              To enhance the fine-grained visual perception capabilities of the VLM, we introduce additional region tokens that complement the holistic image features and are integrated into the user's instructions. 
-              Relying solely on the output of the Language Model (LLM) to guide the diffusion model may result in suboptimal editing outcomes.
+FireEdit is designed to accurately comprehend user instructions and ensure effective control over the editing process. Specifically, we enhance the fine-grained visual perception capabilities of the VLM by introducing additional region tokens. Relying solely on the output of the LLM to guide the diffusion model may lead to suboptimal editing results.
 Therefore, we propose a Time-Aware Target Injection module and a Hybrid Visual Cross Attention module. 
               The former dynamically adjusts the guidance strength at various denoising stages by integrating timestep embeddings with the text embeddings. The latter enhances visual details for image editing, thereby preserving semantic consistency between the edited result and the source image. By combining the VLM enhanced with fine-grained region tokens and the time-dependent diffusion model, FireEdit demonstrates significant advantages in comprehending editing instructions and maintaining high semantic consistency. Extensive experiments indicate that our approach surpasses the state-of-the-art instruction-based image editing methods.
             </p>
@@ -253,21 +251,12 @@ Therefore, we propose a Time-Aware Target Injection module and a Hybrid Visual C
       <div class="hero-body">
         <!-- Your image here -->
         <h2 class="title is-3 abstract-title">Framework</h2>
-        <img src="static\images\Framework_page-0001.jpg" alt="Teaser Image" width="100%" height="auto">
+        <img src="static\images\FireEdit_model.jpg" alt="Teaser Image" width="100%" height="auto">
         <h2 class="subtitle has-text-centered">
-          The overall framework of our proposed ConsistentID.
+          The overall framework of our proposed FireEdit.
         </h2>
         <h2>
-          The framework comprises two key modules: a multimodal facial ID generator and a purposefully crafted
-          ID-preservation
-          network. The multimodal facial prompt generator consists of two essential components: a fine-grained
-          multimodal feature
-          extractor, which focuses on capturing detailed facial information, and a facial ID feature extractor dedicated
-          to
-          learning facial ID features. On the other hand, the ID-preservation network utilizes both facial textual and
-          visual
-          prompts, preventing the blending of ID information from different facial regions through the facial attention
-          localization strategy. This approach ensures the preservation of ID consistency in the facial regions.
+         The core of FireEdit is to conduct region-aware fusion of multi-modal tokens to promote VLMs and facilitate fine-grained, localized alignments between editing instructions and images. It also introduces a hybrid visual cross-attention module to better preserve image details and a time-aware target injection module to edit targets adaptively.
         </h2>
       </div>
     </div>
@@ -336,11 +325,9 @@ Therefore, we propose a Time-Aware Target Injection module and a Hybrid Visual C
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
             <!-- Your image here -->
-            <img src="static\images\ResultsCompare_page-0001.jpg" alt="MY ALT TEXT" />
+            <img src="static\images\FireEdit_qua.jpg" alt="MY ALT TEXT" />
             <h2 class="subtitle has-text-centered">
-              Qualitative comparison of universal recontextualization samples is conducted, comparing our approach with
-              other methods using five distinct identities and their corresponding prompts. Our ConsistentID exhibits a
-              more powerful capability in high-quality generation, flexible editability, and strong identity fidelity.
+              Qualitative comparison. We compare the editing performance of FireEdit with SOTA methods on the Emu Edit test set. Each editing instruction is written below each row of images. Compared with other SOTA methods, our approach is superior in accurately locating the edited objects or regions and preserving the detailed information of the input image
             </h2>
           </div>
           <div class="item">
